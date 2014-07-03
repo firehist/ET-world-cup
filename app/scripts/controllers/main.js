@@ -9,9 +9,6 @@
  */
 angular.module('etWorldCupApp')
   .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+
+    $scope.name = "me-" + Math.round(Math.random() * (999 - 100) + 100);
   });
