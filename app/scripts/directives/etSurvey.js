@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('etWorldCupApp')
-  .directive('etsurvey', function ($firebase) {
+  .directive('etsurvey', function ($firebase, $modal) {
     'use strict';
 
     return {
@@ -22,6 +22,13 @@ angular.module('etWorldCupApp')
             "createdAt": +(new Date())
           });
 
+        };
+
+        scope.open = function () {
+            var modalInstance = $modal.open({
+              templateUrl: 'views/etSurveyAdd.html',
+              controller: 'newSurveyCtrl'
+            });
         };
 
         scope.removeSurvey = function(id) {
