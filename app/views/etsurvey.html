@@ -1,1 +1,11 @@
-<p>MY FUCKING VIEW</p>
+<ul>
+	<li ng-repeat="(key, survey) in surveys" ng-class="survey.status">
+		{{survey.question}} by {{survey.author}}
+		<br />
+		<button>{{survey.responses[0]}}</button> ou <button>{{survey.responses[1]}}</button>
+		<br />
+		<button ng-click="removeSurvey(key)">Delete survey</button>
+	</li>
+</ul>
+
+<button ng-click="addSurvey()">New survey</button>

@@ -14,22 +14,4 @@ angular.module('etWorldCupApp')
       'AngularJS',
       'Karma'
     ];
-  })
-  .directive('etsurvey', function () {
-    'use strict';
-
-    console.debug('ok');
-
-
-    return {
-      template: 'views/etsurvey.html',
-      link: function (scope, element, attrs) {
-
-
-
-        console.debug('ok');
-
-      }
-    };
-
   });
