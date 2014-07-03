@@ -3,11 +3,23 @@
 <div class="list-card" ng-repeat="(key, survey) in surveys" ng-class="survey.status">
   <h5>{{survey.question}} by {{survey.author}}</h5>
 
-  <div style="text-align: center">
-    <button ng-click="voteFor(survey.question, survey.responses[0], name)">{{survey.responses[0]}}</button> ou <button ng-click="voteFor(survey.question, survey.responses[1], name)">{{survey.responses[1]}}</button>
-  </div>
+
+  <table>
+    <tr>
+      <td valign="top">
+        <button ng-click="voteFor(survey.question, survey.responses[0], name)">{{survey.responses[0]}}</button> ou <button ng-click="voteFor(survey.question, survey.responses[1], name)">{{survey.responses[1]}}</button>
+      </td>
+      <td>
+        <ul>
+          <li ng-repeat="(voter, answer) in survey.answers">
+            <i>{{voter}}</i> à voté pour "{{answer}}"
+          </li>
+        </ul>
+      </td>
+    </tr>
+  </table>
 
   <button style="position: absolute;top:5px; right:5px;" ng-click="removeSurvey(key)">Delete</button>
 </div>
 
-<button ng-click="open()">+</button>
+<button ng-click="open()">Pose une question à tes amis!</button>
